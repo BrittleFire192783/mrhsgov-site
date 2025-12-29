@@ -47,13 +47,13 @@ body {
 .h1 {
   margin: 0;
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .h2 {
   margin: 0 0 0.25rem 0;
   font-size: 0.9rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .p {
@@ -71,7 +71,7 @@ body {
 
 .kicker {
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--muted);
   margin-bottom: 0.25rem;
 }
@@ -81,7 +81,7 @@ body {
   border: 1px solid var(--border);
   background: #fff;
   color: var(--ink);
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 0.85rem;
   text-decoration: none;
@@ -111,7 +111,7 @@ body {
 }
 
 .brand-title {
-  font-weight: 900;
+  font-weight: 950;
 }
 
 .brand-subtitle {
@@ -141,7 +141,7 @@ body {
   padding: 0.75rem;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .select {
@@ -157,7 +157,7 @@ body {
 .panel {
   background: #f9fafb;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 0.85rem;
 }
 
@@ -171,53 +171,72 @@ body {
   margin-bottom: 0.25rem;
 }
 
-/* Full-screen period sections */
-.periods {
+/* Horizontal full-page year tiles */
+.hwrap {
   margin-top: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--card);
-  height: calc(100vh - 220px);
-  max-height: 820px;
-  scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
 }
 
-.period {
+.navbtn {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  height: 100%;
+  max-height: 520px;
+}
+
+.years {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card);
+  height: calc(100vh - 240px);
+  max-height: 520px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.year {
   scroll-snap-align: start;
-  min-height: 100%;
+  min-width: 100%;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  border-right: 1px solid var(--border);
+  background: linear-gradient(90deg, #ffffff, #f9fafb);
 }
 
-.period:last-child {
-  border-bottom: none;
+.year:last-child {
+  border-right: none;
 }
 
-.period-top {
+.year-top {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.period-year {
+.year-big {
   font-size: 3.2rem;
   font-weight: 950;
   letter-spacing: -0.03em;
 }
 
-.period-title {
+.year-title {
   margin-top: 0.3rem;
   font-size: 1.15rem;
-  font-weight: 900;
+  font-weight: 950;
 }
 
-.period-sub {
+.year-sub {
   margin-top: 0.45rem;
   color: var(--muted);
   line-height: 1.55;
@@ -225,7 +244,7 @@ body {
   font-size: 1rem;
 }
 
-.period-right {
+.year-right {
   text-align: right;
 }
 
@@ -244,7 +263,7 @@ body {
   background: #fff;
 }
 
-.period-actions {
+.year-actions {
   display: flex;
   gap: 0.75rem;
   justify-content: space-between;
@@ -252,22 +271,25 @@ body {
   margin-top: 1rem;
 }
 
-.period-actions .muted {
+.year-actions .muted {
   font-size: 0.9rem;
 }
 
 @media (max-width: 700px) {
-  .period-top {
+  .year-top {
     flex-direction: column;
   }
-  .period-right {
+  .year-right {
     text-align: left;
   }
   .badges {
     justify-content: flex-start;
   }
-  .periods {
-    height: calc(100vh - 260px);
+  .years {
+    height: calc(100vh - 300px);
+  }
+  .navbtn {
+    padding: 0.5rem 0.6rem;
   }
 }
 
@@ -325,8 +347,8 @@ body {
 .item-btn {
   border: 1px solid var(--border);
   background: #fff;
-  border-radius: 12px;
-  padding: 0.75rem;
+  border-radius: 14px;
+  padding: 0.85rem;
   cursor: pointer;
   text-align: left;
 }
@@ -336,7 +358,7 @@ body {
 }
 
 .item-btn .item-title {
-  font-weight: 900;
+  font-weight: 950;
   margin-bottom: 0.25rem;
 }
 

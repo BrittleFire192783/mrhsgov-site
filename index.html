@@ -17,7 +17,7 @@
         <div class="brand">
           <div class="brand-title">AP Timeline</div>
           <div class="brand-subtitle">
-            Scroll through years. Click a year to expand what happened, then open a detail.
+            Swipe through years. Click a year to expand context, then open a detail.
           </div>
         </div>
 
@@ -32,23 +32,29 @@
     </header>
 
     <main class="wrap">
-      <section class="timeline-section" aria-label="Browse by period">
+      <section class="timeline-section" aria-label="Browse by year">
         <div class="timeline-header">
           <h1 class="h1">Timeline</h1>
-          <div class="status"><span id="statusText">Scroll to a year. Click it to expand.</span></div>
+          <div class="status"><span id="statusText">Drag horizontally. Click a year to expand.</span></div>
         </div>
 
-        <!-- Full-screen scroll area -->
-        <div id="periods" class="periods" aria-label="Year sections"></div>
+        <!-- Horizontal, full-width timeline -->
+        <div class="hwrap">
+          <button id="btnPrev" class="navbtn" type="button" aria-label="Previous year">◀</button>
+
+          <div id="years" class="years" aria-label="Year tiles"></div>
+
+          <button id="btnNext" class="navbtn" type="button" aria-label="Next year">▶</button>
+        </div>
       </section>
 
       <!-- Expands between timeline and how-to -->
-      <section id="periodExpand" class="expand" aria-label="Period details">
+      <section id="yearExpand" class="expand" aria-label="Year context">
         <div class="expand-shell">
           <div class="expand-top">
             <div>
               <div id="expandTitle" class="expand-title">Select a year</div>
-              <div id="expandMeta" class="expand-meta">Period summary and items appear here.</div>
+              <div id="expandMeta" class="expand-meta">Context and items appear here.</div>
             </div>
             <button id="btnCollapse" class="btn btn-secondary" type="button">Collapse</button>
           </div>
@@ -56,8 +62,8 @@
           <div class="expand-body">
             <div class="grid">
               <div class="panel span-2">
-                <h2 class="h2">What happened in this period</h2>
-                <p id="expandSummary" class="p muted">...</p>
+                <h2 class="h2">What happened in this time</h2>
+                <p id="expandSummary" class="p muted">Click a year to expand.</p>
               </div>
 
               <div class="panel span-2">
@@ -69,7 +75,7 @@
         </div>
       </section>
 
-      <!-- Detail card (hidden until an item is chosen) -->
+      <!-- Detail card -->
       <section id="detailCard" class="card-section" aria-label="Detail card">
         <div class="card-shell">
           <div class="card-topbar">
@@ -84,7 +90,7 @@
             <div class="grid">
               <div class="panel">
                 <h2 class="h2">Quick Take</h2>
-                <p id="quickTake" class="p muted">Choose an item from the expanded period panel.</p>
+                <p id="quickTake" class="p muted">Choose an item from the expanded year panel.</p>
               </div>
 
               <div class="panel">
@@ -172,8 +178,8 @@
             <div class="panel">
               <h2 class="h2">Flow</h2>
               <ul class="list">
-                <li>Scroll the timeline, each screen is a year.</li>
-                <li>Click a year to expand what happened.</li>
+                <li>Drag the timeline to move through years.</li>
+                <li>Click a year to expand context.</li>
                 <li>Select an item to open the detail card.</li>
               </ul>
             </div>
@@ -190,8 +196,7 @@
             <div class="panel span-2">
               <h2 class="h2">Long term</h2>
               <p class="p muted">
-                This structure supports AP Gov and APUSH on the same timeline by mixing subjects and
-                categories per year.
+                This structure supports AP Gov and APUSH on the same timeline by mixing subjects and categories per year.
               </p>
             </div>
           </div>

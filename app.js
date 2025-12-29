@@ -63,7 +63,6 @@ function setTags(tags) {
   if (!el) return;
   el.innerHTML = "";
   if (!tags) return;
-
   for (const tag of tags) {
     const pill = document.createElement("span");
     pill.textContent = tag;
@@ -72,11 +71,11 @@ function setTags(tags) {
 }
 
 function showExpand() {
-  $("periodExpand")?.classList.add("is-visible");
+  $("yearExpand")?.classList.add("is-visible");
 }
 
 function hideExpand() {
-  $("periodExpand")?.classList.remove("is-visible");
+  $("yearExpand")?.classList.remove("is-visible");
 }
 
 function showDetail() {
@@ -120,8 +119,8 @@ function yearBadges(itemsInYear) {
   return [...set].slice(0, 6);
 }
 
-function openItemDetail(items, id, doScroll) {
-  const c = items.find((x) => x.id === id);
+function openItemDetail(allItems, id, doScroll) {
+  const c = allItems.find((x) => x.id === id);
   if (!c) return;
 
   const meta = [c.year, c.subject, c.category].filter(Boolean).join(" | ");
@@ -198,13 +197,13 @@ function openYearExpand(year, itemsInYear) {
   }
 
   showExpand();
-  $("periodExpand")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  $("yearExpand")?.scrollIntoView({ behavior: "smooth", block: "start" });
   setStatus(`Expanded ${year}. Select an item.`);
 }
 
-function renderPeriods(allItems) {
-  const periods = $("periods");
-  if (!periods) return;
+function renderYears(allItems) {
+  const yearsEl = $("years");
+  if (!yearsEl) return [];
 
   const byYear = new Map();
   for (const it of allItems) {
@@ -215,29 +214,29 @@ function renderPeriods(allItems) {
 
   const years = [...byYear.keys()].sort((a, b) => a - b);
 
-  periods.innerHTML = "";
+  yearsEl.innerHTML = "";
   for (const y of years) {
     const itemsInYear = byYear.get(y);
 
     const section = document.createElement("section");
-    section.className = "period";
+    section.className = "year";
     section.id = `year-${y}`;
 
     const top = document.createElement("div");
-    top.className = "period-top";
+    top.className = "year-top";
 
     const left = document.createElement("div");
 
     const yearEl = document.createElement("div");
-    yearEl.className = "period-year";
+    yearEl.className = "year-big";
     yearEl.textContent = `${y}`;
 
     const titleEl = document.createElement("div");
-    titleEl.className = "period-title";
+    titleEl.className = "year-title";
     titleEl.textContent = yearHeadline(itemsInYear);
 
     const subEl = document.createElement("div");
-    subEl.className = "period-sub";
+    subEl.className = "year-sub";
     subEl.textContent =
       itemsInYear.length === 0
         ? "No items yet."
@@ -248,7 +247,7 @@ function renderPeriods(allItems) {
     left.appendChild(subEl);
 
     const right = document.createElement("div");
-    right.className = "period-right";
+    right.className = "year-right";
 
     const badges = document.createElement("div");
     badges.className = "badges";
@@ -263,7 +262,7 @@ function renderPeriods(allItems) {
     top.appendChild(right);
 
     const actions = document.createElement("div");
-    actions.className = "period-actions";
+    actions.className = "year-actions";
 
     const hint = document.createElement("div");
     hint.className = "muted";
@@ -281,7 +280,7 @@ function renderPeriods(allItems) {
     section.appendChild(top);
     section.appendChild(actions);
 
-    periods.appendChild(section);
+    yearsEl.appendChild(section);
   }
 
   return years;
@@ -302,15 +301,28 @@ function renderJump(years) {
   sel.addEventListener("change", () => {
     if (!sel.value) return;
     const target = document.getElementById(`year-${sel.value}`);
-    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    target?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
     setStatus(`Jumped to ${sel.value}. Click Expand.`);
+  });
+}
+
+function wireNavButtons() {
+  const years = $("years");
+  if (!years) return;
+
+  $("btnPrev")?.addEventListener("click", () => {
+    years.scrollBy({ left: -years.clientWidth, behavior: "smooth" });
+  });
+
+  $("btnNext")?.addEventListener("click", () => {
+    years.scrollBy({ left: years.clientWidth, behavior: "smooth" });
   });
 }
 
 function wireCollapse() {
   $("btnCollapse")?.addEventListener("click", () => {
     hideExpand();
-    setStatus("Collapsed period panel.");
+    setStatus("Collapsed year panel.");
   });
 }
 
@@ -335,7 +347,6 @@ async function loadItems() {
   if (!res.ok) throw new Error("Failed to load data");
   const data = await res.json();
   if (!Array.isArray(data)) throw new Error("Data must be an array");
-
   data.sort((a, b) => (a.year ?? 0) - (b.year ?? 0));
   return data;
 }
@@ -350,9 +361,8 @@ function openFromHash(allItems) {
   if (!c) return false;
 
   const yearSection = document.getElementById(`year-${c.year}`);
-  yearSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+  yearSection?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
 
-  // Show expand for that year, then open detail
   const itemsInYear = allItems.filter((x) => x.year === c.year);
   openYearExpand(c.year, itemsInYear);
   openItemDetail(itemsInYear, c.id, false);
@@ -360,6 +370,7 @@ function openFromHash(allItems) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  wireNavButtons();
   wireCollapse();
   wireCopyLink();
   hideExpand();
@@ -367,11 +378,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     const allItems = await loadItems();
-    const years = renderPeriods(allItems) || [];
+    const years = renderYears(allItems);
     renderJump(years);
 
     if (!openFromHash(allItems)) {
-      setStatus("Scroll to a year. Click it to expand.");
+      setStatus("Drag horizontally. Click a year to expand.");
     }
   } catch (e) {
     setStatus("Error loading timeline data.");
