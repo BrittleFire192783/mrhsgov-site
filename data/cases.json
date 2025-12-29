@@ -1,6 +1,12 @@
 [
   {
     "id": "mcculloch-1819",
+    "subject": "apgov",
+    "category": "case",
+    "thumbnail": {
+      "src": "",
+      "alt": "McCulloch v. Maryland thumbnail"
+    },
     "title": "McCulloch v. Maryland",
     "year": 1819,
     "type": "Supreme Court case",
@@ -61,6 +67,12 @@
   },
   {
     "id": "gibbons-1824",
+    "subject": "apgov",
+    "category": "case",
+    "thumbnail": {
+      "src": "",
+      "alt": "Gibbons v. Ogden thumbnail"
+    },
     "title": "Gibbons v. Ogden",
     "year": 1824,
     "type": "Supreme Court case",

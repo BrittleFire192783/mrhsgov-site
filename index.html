@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AP Gov Timeline</title>
+    <title>AP Timeline</title>
     <meta
       name="description"
-      content="A student study site that organizes AP Gov cases and key documents on a timeline with quick, test-ready summaries."
+      content="A student study site that organizes AP Gov and APUSH items on a timeline with quick summaries."
     />
-
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -16,37 +15,48 @@
     <header class="site-header">
       <div class="wrap">
         <div class="brand">
-          <div class="brand-title">AP Gov Timeline</div>
-          <div class="brand-subtitle">Click a year. A case card appears above the study notes.</div>
+          <div class="brand-title">AP Timeline</div>
+          <div class="brand-subtitle">Scroll thumbnails. Quick jump for exact years.</div>
         </div>
 
         <nav class="top-actions" aria-label="Top actions">
-          <a class="btn" href="#timeline">Timeline</a>
+          <a class="btn" href="#browse">Browse</a>
+          <a class="btn" href="#timeline">Quick jump</a>
           <a class="btn btn-secondary" href="#howto">How to use</a>
         </nav>
       </div>
     </header>
 
     <main class="wrap">
-      <section id="timeline" class="timeline-section" aria-label="Timeline">
+      <!-- Visual scroller -->
+      <section id="browse" class="timeline-section" aria-label="Browse timeline">
         <div class="timeline-header">
-          <h1 class="h1">Timeline</h1>
+          <h1 class="h1">Browse by year</h1>
           <div class="status">
-            <span id="statusText">Pick a year to open the case card.</span>
+            <span id="statusText">Scroll and click a year to open the card.</span>
           </div>
         </div>
 
-        <div class="timeline" role="list" aria-label="Case timeline">
-          <div id="timelineItems" class="timeline-items"></div>
+        <div class="scroller" aria-label="Year scroller">
+          <button class="scroller-nav" id="scrollerPrev" type="button" aria-label="Scroll left">
+            ◀
+          </button>
+
+          <div id="scrollerTrack" class="scroller-track" role="list"></div>
+
+          <button class="scroller-nav" id="scrollerNext" type="button" aria-label="Scroll right">
+            ▶
+          </button>
         </div>
       </section>
 
-      <section id="caseCard" class="card-section" aria-label="Case card">
+      <!-- Case card (hidden until click) -->
+      <section id="caseCard" class="card-section" aria-label="Case or event card">
         <div class="card-shell">
           <div class="card-topbar">
             <div class="card-titleblock">
-              <div id="cardTitle" class="card-title">Select a case</div>
-              <div id="cardMeta" class="card-meta">Year, vote, and type will appear here.</div>
+              <div id="cardTitle" class="card-title">Select a year</div>
+              <div id="cardMeta" class="card-meta">Year, category, and subject will appear here.</div>
             </div>
 
             <div class="card-tags" id="cardTags" aria-label="Tags"></div>
@@ -56,7 +66,7 @@
             <div class="grid">
               <div class="panel">
                 <h2 class="h2">Quick Take</h2>
-                <p id="quickTake" class="p muted">Click a year in the timeline to load the case card.</p>
+                <p id="quickTake" class="p muted">Click a year above to load content.</p>
               </div>
 
               <div class="panel">
@@ -125,17 +135,38 @@
           </div>
 
           <div class="card-footer">
-            <div class="hint">Tip: Click a year, then scan Quick Take and Holding first.</div>
+            <div class="hint">Tip: Quick Take then Holding first.</div>
             <div class="footer-actions">
-              <button id="btnOpenHash" class="btn btn-secondary" type="button">Copy link to this case</button>
+              <button id="btnCopyLink" class="btn btn-secondary" type="button">Copy link</button>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Quick jump tools -->
+      <section id="timeline" class="timeline-section" aria-label="Quick jump tools">
+        <div class="timeline-header">
+          <h1 class="h1">Quick jump</h1>
+          <div class="status">
+            <label class="muted small" for="yearSelect">Jump to year</label>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="quick-row">
+            <select id="yearSelect" class="select" aria-label="Jump to year">
+              <option value="">Select a year</option>
+            </select>
+          </div>
+
+          <div class="timeline-items" id="timelineItems" aria-label="Condensed timeline"></div>
+        </div>
+      </section>
+
+      <!-- How to use -->
       <section id="howto" class="timeline-section" aria-label="How to use">
         <div class="timeline-header">
-          <h1 class="h1">How to use this site</h1>
+          <h1 class="h1">How to use</h1>
           <div class="status"><span class="muted">Student-authored study notes</span></div>
         </div>
 
@@ -144,36 +175,34 @@
             <div class="panel">
               <h2 class="h2">What it is</h2>
               <p class="p muted">
-                A timeline that opens a case card with facts, the constitutional question, the holding, key reasoning,
-                and why it matters for AP Gov.
+                A timeline that opens a card with facts, the core question, the holding, reasoning, and why it matters.
+                Long term goal: AP Gov plus APUSH in one place.
               </p>
             </div>
 
             <div class="panel">
               <h2 class="h2">How to study</h2>
               <ul class="list">
-                <li>Pick a year on the timeline.</li>
+                <li>Browse the thumbnails to get the era flow.</li>
+                <li>Use Quick jump for an exact year.</li>
                 <li>Read Quick Take and Holding first.</li>
-                <li>Scan Facts and Reasoning for test-ready language.</li>
-                <li>Use Connections to link cases by theme.</li>
+                <li>Use Connections to link themes.</li>
               </ul>
             </div>
 
             <div class="panel span-2">
-              <h2 class="h2">First demo set</h2>
-              <p class="p muted">The first two cards prove the format before expanding.</p>
+              <h2 class="h2">Demo set</h2>
               <ul class="list">
                 <li>McCulloch v. Maryland (1819)</li>
                 <li>Gibbons v. Ogden (1824)</li>
               </ul>
-              <p class="p muted">Next: add more cases one unit at a time.</p>
             </div>
           </div>
         </div>
       </section>
 
       <footer class="site-footer">
-        <div class="muted small">Student-authored summaries. Confirm details with official sources if needed.</div>
+        <div class="muted small">Student-authored summaries. Confirm with official sources if needed.</div>
       </footer>
     </main>
 
