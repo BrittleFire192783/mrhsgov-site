@@ -5,7 +5,7 @@ function page(status, payload) {
     <script>
       const msg = 'authorization:github:${status}:${JSON.stringify(payload)}';
       if (window.opener) {
-        window.opener.postMessage(msg, window.location.origin);
+        window.opener.postMessage(msg, "*");
         window.close();
       }
     </script>
