@@ -14,8 +14,11 @@ public_folder: "/assets/uploads"
 collections:
   - name: "cases"
     label: "Court Cases"
-    file: "data/cases.json"
+    folder: "data/cases"
+    create: true
+    slug: "{{id}}"
     format: "json"
+    extension: "json"
     editor:
       preview: false
     fields:
