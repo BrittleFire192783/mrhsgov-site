@@ -1,0 +1,62 @@
+{
+    "id": "gibbons-1824",
+    "subject": "apgov",
+    "category": "case",
+    "thumbnail": {
+      "src": "",
+      "alt": "Gibbons v. Ogden thumbnail"
+    },
+    "title": "Gibbons v. Ogden",
+    "year": 1824,
+    "type": "Supreme Court case",
+    "vote": "6-0",
+    "tags": ["Federalism", "Commerce Clause"],
+    "quickTake": "Only Congress can regulate interstate commerce, including navigation.",
+    "corePrompt": "Can New York grant a monopoly that blocks a federally licensed operator from running steamboats between states?",
+    "answerLabel": "Holding",
+    "answerText": "The Commerce Clause gives Congress power over interstate commerce, and federal licensing overrides conflicting state laws.",
+    "facts": [
+      "New York granted an exclusive steamboat operating right to Ogden.",
+      "Gibbons operated competing steamboats using a federal coastal license.",
+      "Ogden sued to stop Gibbons under the New York monopoly."
+    ],
+    "reasoning": [
+      "Commerce includes navigation when it crosses state lines.",
+      "When Congress acts within its commerce power, conflicting state restrictions are invalid.",
+      "The decision favors a single national market over state barriers."
+    ],
+    "precedent": [
+      "Expanded the scope of the Commerce Clause.",
+      "Limited state-created economic barriers that conflict with federal authority."
+    ],
+    "terms": [
+      {
+        "term": "Commerce Clause",
+        "definition": "Gives Congress power to regulate commerce among the states."
+      },
+      {
+        "term": "Interstate commerce",
+        "definition": "Economic activity that crosses state lines or affects trade between states."
+      }
+    ],
+    "whyExam": [
+      "Key case for understanding the Commerce Clause and federal supremacy.",
+      "Often paired with McCulloch to show early strengthening of national power."
+    ],
+    "whyReal": [
+      "Helped create consistent rules for trade across states.",
+      "Cited in later debates about federal regulation of the economy."
+    ],
+    "leadsTo": [
+      "Later Commerce Clause cases that test the limits of federal regulation"
+    ],
+    "connectsBack": [
+      "McCulloch v. Maryland (1819) for national supremacy over conflicting state action"
+    ],
+    "links": [
+      {
+        "label": "Oyez summary",
+        "url": "https://www.oyez.org/cases/1789-1850/22us1"
+      }
+    ]
+  }

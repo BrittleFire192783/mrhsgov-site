@@ -1,0 +1,66 @@
+{
+    "id": "mcculloch-1819",
+    "subject": "apgov",
+    "category": "case",
+    "thumbnail": {
+      "src": "",
+      "alt": "McCulloch v. Maryland thumbnail"
+    },
+    "title": "McCulloch v. Maryland",
+    "year": 1819,
+    "type": "Supreme Court case",
+    "vote": "7-0",
+    "tags": ["Federalism", "Necessary and Proper", "Supremacy Clause"],
+    "quickTake": "Congress can create the Bank of the United States, and Maryland cannot tax it.",
+    "corePrompt": "Does Congress have the power to create a national bank, and can a state tax it?",
+    "answerLabel": "Holding",
+    "answerText": "Congress has implied powers under the Necessary and Proper Clause to create a national bank, and state taxes that interfere with valid federal action are unconstitutional under the Supremacy Clause.",
+    "facts": [
+      "Congress chartered the Second Bank of the United States.",
+      "Maryland passed a tax targeting the bank.",
+      "James McCulloch, a bank cashier, refused to pay the tax and was sued by Maryland."
+    ],
+    "reasoning": [
+      "The Constitution grants Congress enumerated powers plus implied powers needed to carry them out.",
+      "The Necessary and Proper Clause supports means that are useful and appropriate for executing enumerated powers.",
+      "States cannot use taxation to control or destroy federal institutions because federal law is supreme."
+    ],
+    "precedent": [
+      "Strengthened the idea of implied powers.",
+      "Reinforced federal supremacy when state action conflicts with valid federal action."
+    ],
+    "terms": [
+      {
+        "term": "Implied powers",
+        "definition": "Powers not explicitly listed but reasonably derived from enumerated powers."
+      },
+      {
+        "term": "Necessary and Proper Clause",
+        "definition": "Allows Congress to make laws needed to carry out its listed powers."
+      },
+      {
+        "term": "Supremacy Clause",
+        "definition": "Federal law is the supreme law of the land when validly enacted."
+      }
+    ],
+    "whyExam": [
+      "Common example of implied powers and federal supremacy.",
+      "Often used to explain how the national government can expand authority through interpretation."
+    ],
+    "whyReal": [
+      "Supports a strong national government in disputes with states.",
+      "Used as a foundation for later federal power cases."
+    ],
+    "leadsTo": [
+      "Gibbons v. Ogden (1824) for national power in the economy"
+    ],
+    "connectsBack": [
+      "Constitutional Convention debates over a stronger national government"
+    ],
+    "links": [
+      {
+        "label": "Oyez summary",
+        "url": "https://www.oyez.org/cases/1789-1850/17us316"
+      }
+    ]
+  }
