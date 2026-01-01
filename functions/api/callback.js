@@ -44,13 +44,18 @@ function renderCallbackPage(status, payload) {
 
     <script>
       (function () {
-        const msg = 'authorization:github:${status}:${safePayload}';
+        const payloadJson = ${safePayload};
+        const msgString = 'authorization:github:${status}:' + JSON.stringify(payloadJson);
 
         // Try to notify the opener (Decap CMS).
         try {
           if (window.opener && !window.opener.closed) {
-            window.opener.postMessage(msg, '*');
-            // Give the message a moment to deliver before closing.
+            // Send the exact string format Decap listens for.
+            window.opener.postMessage(msgString, window.location.origin);
+            // Also send a permissive copy for browsers that are picky.
+            window.opener.postMessage(msgString, '*');
+
+            // Close after a brief delay.
             setTimeout(() => window.close(), 300);
             return;
           }
@@ -107,7 +112,8 @@ export async function onRequest({ request, env }) {
   }
 
   return new Response(
-    renderCallbackPage("success", { token: accessToken, provider: "github" }),
+    // Decap expects a payload containing at least a token.
+    renderCallbackPage("success", { token: accessToken }),
     { headers: { "Content-Type": "text/html" } }
   );
 }
