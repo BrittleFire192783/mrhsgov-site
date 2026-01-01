@@ -71,11 +71,17 @@ function setTags(tags) {
 }
 
 function showExpand() {
-  $("yearExpand")?.classList.add("is-visible");
+  const el = $("yearExpand");
+  if (!el) return;
+  el.classList.add("is-visible");
+  el.classList.add("is-open");
 }
 
 function hideExpand() {
-  $("yearExpand")?.classList.remove("is-visible");
+  const el = $("yearExpand");
+  if (!el) return;
+  el.classList.remove("is-open");
+  el.classList.remove("is-visible");
 }
 
 function showDetail() {
@@ -323,6 +329,8 @@ function wireCollapse() {
   $("btnCollapse")?.addEventListener("click", () => {
     hideExpand();
     setStatus("Collapsed year panel.");
+    // Optional: bring focus back to the timeline row
+    $("years")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
 }
 
@@ -369,12 +377,25 @@ function openFromHash(allItems) {
   return true;
 }
 
+function openHowToIfNeeded() {
+  const details = document.getElementById("howtoDetails");
+  if (!details) return;
+  const hash = window.location.hash || "";
+  if (hash.startsWith("#howto")) {
+    details.open = true;
+    details.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+window.addEventListener("hashchange", openHowToIfNeeded);
+
 document.addEventListener("DOMContentLoaded", async () => {
   wireNavButtons();
   wireCollapse();
   wireCopyLink();
   hideExpand();
   hideDetail();
+  openHowToIfNeeded();
 
   try {
     const allItems = await loadItems();

@@ -458,3 +458,44 @@ body {
   margin-top: 1rem;
   text-align: center;
 }
+
+/* Make expanded year visually dominant */
+.expand {
+  transition: all 0.25s ease;
+}
+
+.expand.is-open {
+  margin-top: 24px;
+}
+
+.expand.is-open .expand-shell {
+  min-height: 75vh;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Slight background emphasis */
+.expand.is-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.04);
+  z-index: -1;
+}
+
+/* How-to dropdown polish */
+.howto-details {
+  max-width: 100%;
+}
+
+.howto-summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.howto-details:not([open]) .howto-body {
+  display: none;
+}
+
+.howto-details[open] {
+  margin-top: 16px;
+}
