@@ -35,41 +35,7 @@
     "Allows courts to strike down unconstitutional laws.",
     "Shapes every constitutional case that follows."
   ]
-}
-,
-{
-  "id": "fletcher-1810",
-  "subject": "apgov",
-  "category": "case",
-  "thumbnail": { "src": "", "alt": "Fletcher v. Peck thumbnail" },
-  "title": "Fletcher v. Peck",
-  "year": 1810,
-  "type": "Supreme Court case",
-  "vote": "6-1",
-  "tags": ["Judicial Review", "Contracts Clause"],
-  "quickTake": "The Court ruled that state laws violating contracts are unconstitutional.",
-  "corePrompt": "Can a state legislature invalidate a private contract?",
-  "answerLabel": "Holding",
-  "answerText": "State laws that impair contractual obligations violate the Constitution.",
-  "facts": [
-    "Georgia sold land through corrupt legislative acts.",
-    "A later legislature attempted to void the land sales.",
-    "The dispute reached the Supreme Court."
-  ],
-  "reasoning": [
-    "Contracts are protected under the Constitution.",
-    "State legislatures cannot retroactively cancel valid contracts."
-  ],
-  "precedent": [
-    "First case striking down a state law.",
-    "Extended judicial review to state legislation."
-  ],
-  "whyExam": [
-    "Shows judicial review over states.",
-    "Often paired with Marbury to show expansion of Court power."
-  ]
-}
-,
+},
 {
   "id": "mcculloch-1819",
   "subject": "apgov",
@@ -296,39 +262,7 @@
     "Frequently tested in civil rights questions."
   ]
 }
-,
-{
-  "id": "cooper-1958",
-  "subject": "apgov",
-  "category": "case",
-  "thumbnail": { "src": "", "alt": "Cooper v. Aaron thumbnail" },
-  "title": "Cooper v. Aaron",
-  "year": 1958,
-  "type": "Supreme Court case",
-  "vote": "9-0",
-  "tags": ["Judicial Review", "Supremacy Clause", "Civil Rights"],
-  "quickTake": "States must follow Supreme Court decisions.",
-  "corePrompt": "Are state governments bound by Supreme Court interpretations of the Constitution?",
-  "answerLabel": "Holding",
-  "answerText": "State officials are bound by Supreme Court rulings and must enforce them.",
-  "facts": [
-    "Arkansas officials resisted school desegregation after Brown v. Board.",
-    "The governor attempted to delay integration.",
-    "The Court reaffirmed its authority."
-  ],
-  "reasoning": [
-    "The Supreme Court is the final interpreter of the Constitution.",
-    "State resistance undermines constitutional supremacy."
-  ],
-  "precedent": [
-    "Reaffirmed judicial supremacy.",
-    "Strengthened enforcement of civil rights rulings."
-  ],
-  "whyExam": [
-    "Demonstrates the supremacy of federal law.",
-    "Often cited in questions about judicial authority."
-  ]
-}
+
 ,
 {
   "id": "lopez-1995",
