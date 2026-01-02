@@ -526,33 +526,3 @@ body {
   color: #ffffff;
   border-color: #111827;
 }
-
-/* =====================================
-   Expanded Year Snapshot Emphasis
-   ===================================== */
-
-/* Make the expanded year feel like the main focus */
-.expand.is-open .expand-shell {
-  min-height: 80vh;
-}
-
-/* Emphasize the Year snapshot panel */
-#yearExpand .grid > .panel:first-child {
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Snapshot message fills space and feels intentional */
-#expandSummary {
-  min-height: 45vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: var(--ink);
-  text-align: center;
-}
