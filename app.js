@@ -1,5 +1,24 @@
 const DATA_URL = "./data/cases.json";
 
+/* Tag filtering state */
+let activeTag = "all";
+let ALL_ITEMS = [];
+let CURRENT_VISIBLE_ITEMS = [];
+let jumpWired = false;
+
+function applyFilter(items) {
+  if (!Array.isArray(items)) return [];
+  if (activeTag === "all") return items;
+
+  if (activeTag === "required") {
+    return items.filter((it) => it && it.required === true);
+  }
+
+  return items.filter(
+    (it) => it && Array.isArray(it.tags) && it.tags.includes(activeTag)
+  );
+}
+
 function $(id) {
   return document.getElementById(id);
 }
@@ -191,12 +210,14 @@ function openYearExpand(year, itemsInYear) {
 
         const meta = document.createElement("div");
         meta.className = "item-meta";
-        meta.textContent = [it.subject, it.category, it.vote].filter(Boolean).join(" | ");
+        meta.textContent = [it.subject, it.category, it.vote]
+          .filter(Boolean)
+          .join(" | ");
 
         btn.appendChild(title);
         btn.appendChild(meta);
 
-        btn.addEventListener("click", () => openItemDetail(itemsInYear, it.id, true));
+        btn.addEventListener("click", () => openItemDetail(ALL_ITEMS, it.id, true));
         list.appendChild(btn);
       }
     }
@@ -249,19 +270,15 @@ function renderYears(allItems) {
     } else {
       const casesInYear = itemsInYear.filter((x) => x.category === "case");
 
-      // If this year has case items, list them (keeps the UI feeling specific, not template-y)
       if (casesInYear.length) {
-        const titles = casesInYear
-          .map((c) => c.title)
-          .filter(Boolean);
-
-        // Keep it readable on the year card: show up to 3 titles, then a +N indicator
+        const titles = casesInYear.map((c) => c.title).filter(Boolean);
         const shown = titles.slice(0, 3);
         const remaining = titles.length - shown.length;
 
-        subEl.textContent = remaining > 0
-          ? `Cases: ${shown.join(" • ")} • +${remaining} more`
-          : `Cases: ${shown.join(" • ")}`;
+        subEl.textContent =
+          remaining > 0
+            ? `Cases: ${shown.join(" • ")} • +${remaining} more`
+            : `Cases: ${shown.join(" • ")}`;
       } else {
         subEl.textContent = "Open the year snapshot, then pick a card to study.";
       }
@@ -323,12 +340,15 @@ function renderJump(years) {
     sel.appendChild(opt);
   }
 
-  sel.addEventListener("change", () => {
-    if (!sel.value) return;
-    const target = document.getElementById(`year-${sel.value}`);
-    target?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
-    setStatus(`Jumped to ${sel.value}. Click Expand.`);
-  });
+  if (!jumpWired) {
+    sel.addEventListener("change", () => {
+      if (!sel.value) return;
+      const target = document.getElementById(`year-${sel.value}`);
+      target?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+      setStatus(`Jumped to ${sel.value}. Click Expand.`);
+    });
+    jumpWired = true;
+  }
 }
 
 function wireNavButtons() {
@@ -348,7 +368,6 @@ function wireCollapse() {
   $("btnCollapse")?.addEventListener("click", () => {
     hideExpand();
     setStatus("Collapsed year panel.");
-    // Optional: bring focus back to the timeline row
     $("years")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
 }
@@ -366,6 +385,31 @@ function wireCopyLink() {
     } catch {
       window.prompt("Copy this link:", url);
     }
+  });
+}
+
+function wireFilters() {
+  const btns = Array.from(document.querySelectorAll(".filter-btn"));
+  if (!btns.length) return;
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      activeTag = btn.dataset.tag || "all";
+
+      CURRENT_VISIBLE_ITEMS = applyFilter(ALL_ITEMS);
+      const years = renderYears(CURRENT_VISIBLE_ITEMS);
+      renderJump(years);
+
+      hideExpand();
+      hideDetail();
+
+      if (activeTag === "all") setStatus("Showing all items.");
+      else if (activeTag === "required") setStatus("Showing required cases.");
+      else setStatus(`Filtered by: ${activeTag}`);
+    });
   });
 }
 
@@ -392,7 +436,7 @@ function openFromHash(allItems) {
 
   const itemsInYear = allItems.filter((x) => x.year === c.year);
   openYearExpand(c.year, itemsInYear);
-  openItemDetail(itemsInYear, c.id, false);
+  openItemDetail(allItems, c.id, false);
   return true;
 }
 
@@ -417,11 +461,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   openHowToIfNeeded();
 
   try {
-    const allItems = await loadItems();
-    const years = renderYears(allItems);
+    ALL_ITEMS = await loadItems();
+    CURRENT_VISIBLE_ITEMS = applyFilter(ALL_ITEMS);
+
+    wireFilters();
+
+    const years = renderYears(CURRENT_VISIBLE_ITEMS);
     renderJump(years);
 
-    if (!openFromHash(allItems)) {
+    if (!openFromHash(ALL_ITEMS)) {
       setStatus("Drag horizontally. Click a year to expand.");
     }
   } catch (e) {
