@@ -230,8 +230,39 @@
     "Sets up the incorporation doctrine.",
     "Frequently paired with Gitlow v. New York."
   ]
-}
-,
+},
+{
+  "id": "gitlow-1925",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Gitlow v. New York thumbnail" },
+  "title": "Gitlow v. New York",
+  "year": 1925,
+  "type": "Supreme Court case",
+  "vote": "7-2",
+  "tags": ["Free Speech", "Incorporation"],
+  "quickTake": "The First Amendment applies to the states through incorporation.",
+  "corePrompt": "Does the First Amendment apply to state governments?",
+  "answerLabel": "Holding",
+  "answerText": "The First Amendment's free speech protections apply to the states through the Fourteenth Amendment.",
+  "facts": [
+    "Benjamin Gitlow was arrested for distributing socialist literature.",
+    "New York criminalized advocating government overthrow.",
+    "Gitlow argued his First Amendment rights were violated."
+  ],
+  "reasoning": [
+    "Freedom of speech is a fundamental liberty.",
+    "The Fourteenth Amendment protects fundamental rights from state infringement."
+  ],
+  "precedent": [
+    "Established selective incorporation.",
+    "Applied First Amendment rights to the states."
+  ],
+  "whyExam": [
+    "Foundation of incorporation doctrine.",
+    "Frequently paired with Barron v. Baltimore."
+  ]
+},
 {
   "id": "brown-1954",
   "subject": "apgov",
@@ -329,6 +360,103 @@
   "whyExam": [
     "Often paired with Gibbons to show expansion vs limitation.",
     "Key modern federalism case."
+  ]
+}
+,
+{
+  "id": "engle-1962",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Engel v. Vitale thumbnail" },
+  "title": "Engel v. Vitale",
+  "year": 1962,
+  "type": "Supreme Court case",
+  "vote": "6-1",
+  "tags": ["Establishment Clause", "Religion"],
+  "quickTake": "School-sponsored prayer violates the Establishment Clause.",
+  "corePrompt": "Can public schools require prayer?",
+  "answerLabel": "Holding",
+  "answerText": "State-sponsored prayer in public schools violates the Establishment Clause.",
+  "facts": [
+    "New York schools required a non-denominational prayer.",
+    "Participation was officially voluntary.",
+    "Parents challenged the policy."
+  ],
+  "reasoning": [
+    "Government must remain neutral toward religion.",
+    "Official prayer endorses religion."
+  ],
+  "precedent": [
+    "Applied Establishment Clause to public schools.",
+    "Strengthened separation of church and state."
+  ],
+  "whyExam": [
+    "Common Establishment Clause case.",
+    "Frequently tested in religion questions."
+  ]
+},
+{
+  "id": "baker-1962",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Baker v. Carr thumbnail" },
+  "title": "Baker v. Carr",
+  "year": 1962,
+  "type": "Supreme Court case",
+  "vote": "6-2",
+  "tags": ["Redistricting", "Equal Protection"],
+  "quickTake": "Federal courts can hear redistricting cases.",
+  "corePrompt": "Can courts intervene in state redistricting issues?",
+  "answerLabel": "Holding",
+  "answerText": "Redistricting is a justiciable issue under the Equal Protection Clause.",
+  "facts": [
+    "Tennessee failed to redraw districts despite population changes.",
+    "Urban votes were underrepresented.",
+    "Voters challenged the districts."
+  ],
+  "reasoning": [
+    "Equal protection requires fair representation.",
+    "Courts have authority to hear such cases."
+  ],
+  "precedent": [
+    "Established one person, one vote principle.",
+    "Expanded judicial role in elections."
+  ],
+  "whyExam": [
+    "Foundation of reapportionment cases.",
+    "Frequently tested in voting rights questions."
+  ]
+},
+{
+  "id": "miranda-1966",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Miranda v. Arizona thumbnail" },
+  "title": "Miranda v. Arizona",
+  "year": 1966,
+  "type": "Supreme Court case",
+  "vote": "5-4",
+  "tags": ["Due Process", "Rights of the Accused"],
+  "quickTake": "Police must inform suspects of their rights.",
+  "corePrompt": "Must suspects be informed of their Fifth Amendment rights?",
+  "answerLabel": "Holding",
+  "answerText": "Suspects must be informed of their rights before custodial interrogation.",
+  "facts": [
+    "Ernesto Miranda confessed during police interrogation.",
+    "He was not informed of his rights.",
+    "The confession was used at trial."
+  ],
+  "reasoning": [
+    "Custodial interrogation is inherently coercive.",
+    "The Fifth Amendment protects against self-incrimination."
+  ],
+  "precedent": [
+    "Established Miranda rights.",
+    "Strengthened protections for criminal defendants."
+  ],
+  "whyExam": [
+    "Key due process case.",
+    "Frequently tested in rights of the accused questions."
   ]
 }
 ]

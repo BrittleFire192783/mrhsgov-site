@@ -168,7 +168,7 @@ function openYearExpand(year, itemsInYear) {
   const summary =
     itemsInYear.length === 0
       ? "No items for this year yet."
-      : "Click an item below to open details. Later, this area can include APUSH context for the whole year or era.";
+      : "Year snapshot: choose an item below to open the full card. Era notes can be added later.";
   setText("expandSummary", summary);
 
   const list = $("expandItems");
@@ -246,7 +246,7 @@ function renderYears(allItems) {
     subEl.textContent =
       itemsInYear.length === 0
         ? "No items yet."
-        : "Click to expand what happened in this year, then choose an item.";
+        : "Open the year snapshot, then pick a card to study.";
 
     left.appendChild(yearEl);
     left.appendChild(titleEl);

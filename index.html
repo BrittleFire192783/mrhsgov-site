@@ -26,7 +26,13 @@
           <select id="yearSelect" class="select" aria-label="Jump to year">
             <option value="">Select a year</option>
           </select>
-          <a class="btn btn-secondary" href="#howto">How to use</a>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            onclick="document.getElementById('howtoDetails').open = true; document.getElementById('howto').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+          >
+            How to use
+          </button>
         </div>
       </div>
     </header>
@@ -49,7 +55,7 @@
       </section>
 
       <!-- Expands between timeline and how-to -->
-      <section id="yearExpand" class="expand" aria-label="Year context">
+      <section id="yearExpand" class="expand expand-full" aria-label="Year context">
         <div class="expand-shell">
           <div class="expand-top">
             <div>
@@ -62,8 +68,8 @@
           <div class="expand-body">
             <div class="grid">
               <div class="panel span-2">
-                <h2 class="h2">What happened in this time</h2>
-                <p id="expandSummary" class="p muted">Click a year to expand.</p>
+                <h2 class="h2">Year snapshot</h2>
+                <p id="expandSummary" class="p muted">Open a year to see quick context and study items.</p>
               </div>
 
               <div class="panel span-2">
