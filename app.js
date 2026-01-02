@@ -184,10 +184,10 @@ function openYearExpand(year, itemsInYear) {
   setText("expandTitle", `${year}`);
   setText("expandMeta", summarizeYear(itemsInYear));
 
-  const summary =
+    const summary =
     itemsInYear.length === 0
-      ? "No items for this year yet."
-      : "Year snapshot: choose an item below to open the full card. Era notes can be added later.";
+      ? "Select an event. APUSH info coming soon."
+      : "Select an event below. APUSH info coming soon.";
   setText("expandSummary", summary);
 
   const list = $("expandItems");
