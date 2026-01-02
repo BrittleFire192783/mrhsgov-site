@@ -8,6 +8,7 @@
   "year": 1803,
   "type": "Supreme Court case",
   "vote": "4-0",
+  "required": true,
   "tags": ["Judicial Review", "Separation of Powers"],
   "quickTake": "Established the power of judicial review.",
   "corePrompt": "Does the Supreme Court have the authority to declare acts of Congress unconstitutional?",
@@ -48,6 +49,7 @@
   "year": 1819,
   "type": "Supreme Court case",
   "vote": "7-0",
+  "required": true,
   "tags": ["Federalism", "Necessary and Proper", "Supremacy Clause"],
   "quickTake": "Congress can create the Bank of the United States, and Maryland cannot tax it.",
   "corePrompt": "Does Congress have the power to create a national bank, and can a state tax it?",
@@ -114,6 +116,7 @@
   "year": 1824,
   "type": "Supreme Court case",
   "vote": "6-0",
+  "required": false,
   "tags": ["Federalism", "Commerce Clause"],
   "quickTake": "Only Congress can regulate interstate commerce, including navigation.",
   "corePrompt": "Can New York grant a monopoly that blocks a federally licensed operator from running steamboats between states?",
@@ -174,6 +177,7 @@
   "year": 1833,
   "type": "Supreme Court case",
   "vote": "7-0",
+  "required": false,
   "tags": ["Federalism", "Bill of Rights"],
   "quickTake": "The Bill of Rights originally applied only to the federal government.",
   "corePrompt": "Does the Bill of Rights apply to the states?",
@@ -206,6 +210,7 @@
   "year": 1925,
   "type": "Supreme Court case",
   "vote": "7-2",
+  "required": false,
   "tags": ["Free Speech", "Incorporation"],
   "quickTake": "The First Amendment applies to the states through incorporation.",
   "corePrompt": "Does the First Amendment apply to state governments?",
@@ -238,6 +243,7 @@
   "year": 1954,
   "type": "Supreme Court case",
   "vote": "9-0",
+  "required": true,
   "tags": ["Equal Protection", "Civil Rights"],
   "quickTake": "Segregation in public schools is unconstitutional.",
   "corePrompt": "Does racial segregation in public schools violate the Equal Protection Clause?",
@@ -273,6 +279,7 @@
   "year": 1995,
   "type": "Supreme Court case",
   "vote": "5-4",
+  "required": true,
   "tags": ["Commerce Clause", "Federalism"],
   "quickTake": "Congress has limits under the Commerce Clause.",
   "corePrompt": "Does Congress have the power to regulate gun possession in school zones under the Commerce Clause?",
@@ -306,6 +313,7 @@
   "year": 1962,
   "type": "Supreme Court case",
   "vote": "6-1",
+  "required": true,
   "tags": ["Establishment Clause", "Religion"],
   "quickTake": "School-sponsored prayer violates the Establishment Clause.",
   "corePrompt": "Can public schools require prayer?",
@@ -338,6 +346,7 @@
   "year": 1962,
   "type": "Supreme Court case",
   "vote": "6-2",
+  "required": true,
   "tags": ["Redistricting", "Equal Protection"],
   "quickTake": "Federal courts can hear redistricting cases.",
   "corePrompt": "Can courts intervene in state redistricting issues?",
@@ -370,6 +379,7 @@
   "year": 1966,
   "type": "Supreme Court case",
   "vote": "5-4",
+  "required": true,
   "tags": ["Due Process", "Rights of the Accused"],
   "quickTake": "Police must inform suspects of their rights.",
   "corePrompt": "Must suspects be informed of their Fifth Amendment rights?",
@@ -403,6 +413,7 @@
   "year": 1961,
   "type": "Supreme Court case",
   "vote": "6-3",
+  "required": false,
   "tags": ["Fourth Amendment", "Exclusionary Rule", "Incorporation"],
   "quickTake": "Illegally obtained evidence cannot be used in state courts.",
   "corePrompt": "Does the exclusionary rule apply to the states?",
@@ -417,6 +428,18 @@
     "The Fourth Amendment protects against unreasonable searches and seizures.",
     "Rights would be meaningless without enforcement.",
     "The Fourteenth Amendment applies this protection to the states."
+  ],
+  "precedent": [
+    "Applied the exclusionary rule to the states.",
+    "Strengthened Fourth Amendment enforcement in state courts."
+  ],
+  "whyExam": [
+    "Core Fourth Amendment and incorporation case.",
+    "Often paired with other incorporation cases."
+  ],
+  "whyReal": [
+    "Discourages unlawful searches by police.",
+    "Shapes how evidence is handled in criminal trials."
   ]
 },
 {
@@ -428,6 +451,7 @@
   "year": 1879,
   "type": "Supreme Court case",
   "vote": "9-0",
+  "required": false,
   "tags": ["Free Exercise Clause", "Religion"],
   "quickTake": "Religious belief does not excuse criminal conduct.",
   "corePrompt": "Does the Free Exercise Clause protect religious practices that violate criminal law?",
@@ -452,6 +476,7 @@
   "year": 1972,
   "type": "Supreme Court case",
   "vote": "7-0",
+  "required": true,
   "tags": ["Free Exercise Clause", "Religion"],
   "quickTake": "Compulsory education laws cannot violate sincere religious beliefs.",
   "corePrompt": "Can states require Amish children to attend school past 8th grade?",
@@ -476,6 +501,7 @@
   "year": 1919,
   "type": "Supreme Court case",
   "vote": "9-0",
+  "required": true,
   "tags": ["Free Speech", "Clear and Present Danger"],
   "quickTake": "Speech creating a clear and present danger is not protected.",
   "corePrompt": "Can speech be limited during wartime?",
@@ -500,6 +526,7 @@
   "year": 1969,
   "type": "Supreme Court case",
   "vote": "7-2",
+  "required": true,
   "tags": ["Student Speech", "First Amendment"],
   "quickTake": "Students do not lose First Amendment rights at school.",
   "corePrompt": "Do students have First Amendment rights in public schools?",
@@ -515,6 +542,45 @@
     "Symbolic speech is protected."
   ]
 },
+
+{
+  "id": "nyt-united-states-1971",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "New York Times Co. v. United States thumbnail" },
+  "title": "New York Times Co. v. United States",
+  "year": 1971,
+  "type": "Supreme Court case",
+  "vote": "6-3",
+  "required": true,
+  "tags": ["Free Press", "Prior Restraint", "First Amendment"],
+  "quickTake": "The government usually cannot stop publication in advance; prior restraint is heavily disfavored.",
+  "corePrompt": "Can the government block a newspaper from publishing classified documents on national security grounds?",
+  "answerLabel": "Holding",
+  "answerText": "The government did not meet the heavy burden required to justify prior restraint; the newspapers could publish.",
+  "facts": [
+    "The New York Times and other newspapers obtained a classified study about the Vietnam War (the Pentagon Papers).",
+    "The federal government sought court orders to stop publication.",
+    "The newspapers argued the orders violated the First Amendment."
+  ],
+  "reasoning": [
+    "A free press serves as a check on government.",
+    "Prior restraint is the most serious and least tolerable infringement on First Amendment rights.",
+    "The government bears a heavy burden to justify stopping publication in advance."
+  ],
+  "precedent": [
+    "Reinforced strong protection against prior restraint.",
+    "Strengthened press freedom in national security contexts."
+  ],
+  "whyExam": [
+    "Required case for free press and prior restraint.",
+    "Often used to test limits of First Amendment protections."
+  ],
+  "whyReal": [
+    "Protects the ability of the press to publish information about government actions.",
+    "Shapes modern debates about leaks, classified information, and press freedom."
+  ]
+},
 {
   "id": "mcdonald-2010",
   "subject": "apgov",
@@ -524,6 +590,7 @@
   "year": 2010,
   "type": "Supreme Court case",
   "vote": "5-4",
+  "required": true,
   "tags": ["Second Amendment", "Incorporation"],
   "quickTake": "The Second Amendment applies to the states.",
   "corePrompt": "Does the Second Amendment limit state governments?",
@@ -537,6 +604,120 @@
   "reasoning": [
     "The right to bear arms is fundamental.",
     "The Fourteenth Amendment applies it to the states."
+  ]
+},
+{
+  "id": "gideon-1963",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Gideon v. Wainwright thumbnail" },
+  "title": "Gideon v. Wainwright",
+  "year": 1963,
+  "type": "Supreme Court case",
+  "vote": "9-0",
+  "required": true,
+  "tags": ["Due Process", "Right to Counsel", "Incorporation"],
+  "quickTake": "States must provide an attorney to indigent defendants in felony cases.",
+  "corePrompt": "Must states provide counsel to defendants who cannot afford an attorney?",
+  "answerLabel": "Holding",
+  "answerText": "The Sixth Amendment right to counsel is a fundamental right and applies to the states through the Fourteenth Amendment; states must provide counsel in felony cases for indigent defendants.",
+  "facts": [
+    "Clarence Gideon was charged with a felony in Florida and could not afford a lawyer.",
+    "The trial court refused to appoint counsel because state law only required it in capital cases.",
+    "Gideon represented himself, was convicted, and appealed to the Supreme Court."
+  ],
+  "reasoning": [
+    "A fair trial requires legal counsel in an adversarial system.",
+    "The right to counsel is fundamental to due process.",
+    "The Fourteenth Amendment applies this right to the states."
+  ],
+  "precedent": [
+    "Overruled Betts v. Brady (1942).",
+    "Expanded incorporation of criminal procedure protections."
+  ],
+  "whyExam": [
+    "Required case for rights of the accused.",
+    "Shows incorporation through the Fourteenth Amendment."
+  ],
+  "whyReal": [
+    "Guarantees legal representation for those who cannot afford it.",
+    "Shapes public defender systems nationwide."
+  ]
+},
+{
+  "id": "roe-1973",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Roe v. Wade thumbnail" },
+  "title": "Roe v. Wade",
+  "year": 1973,
+  "type": "Supreme Court case",
+  "vote": "7-2",
+  "required": true,
+  "tags": ["Right to Privacy", "Due Process", "Fourteenth Amendment"],
+  "quickTake": "Recognized a constitutional right to privacy that limited state abortion bans.",
+  "corePrompt": "Does the Constitution protect a right to privacy that limits state restrictions on abortion?",
+  "answerLabel": "Holding",
+  "answerText": "The Due Process Clause of the Fourteenth Amendment protects a right to privacy that includes a woman’s decision to have an abortion, though the state may regulate in later stages of pregnancy.",
+  "facts": [
+    "Texas law banned most abortions.",
+    "A pregnant plaintiff challenged the law as unconstitutional.",
+    "The case raised questions about privacy and state power."
+  ],
+  "reasoning": [
+    "The Court recognized privacy protections tied to liberty under the Fourteenth Amendment.",
+    "The state has interests in health and potential life that increase over time.",
+    "The decision balanced individual liberty and state interests."
+  ],
+  "precedent": [
+    "Expanded the Court’s privacy jurisprudence.",
+    "Became a major case in debates over substantive due process and judicial policy making."
+  ],
+  "whyExam": [
+    "Required case for privacy and due process.",
+    "Often used in discussions of civil liberties and the Court’s role."
+  ],
+  "whyReal": [
+    "Influenced decades of abortion policy and litigation.",
+    "Central to broader debates about privacy and individual rights."
+  ]
+},
+{
+  "id": "shaw-1993",
+  "subject": "apgov",
+  "category": "case",
+  "thumbnail": { "src": "", "alt": "Shaw v. Reno thumbnail" },
+  "title": "Shaw v. Reno",
+  "year": 1993,
+  "type": "Supreme Court case",
+  "vote": "5-4",
+  "required": true,
+  "tags": ["Redistricting", "Equal Protection", "Voting Rights"],
+  "quickTake": "Racial gerrymandering can violate the Equal Protection Clause.",
+  "corePrompt": "Do oddly shaped districts drawn primarily on race violate the Equal Protection Clause?",
+  "answerLabel": "Holding",
+  "answerText": "Districts drawn predominantly based on race are subject to strict scrutiny and may violate the Equal Protection Clause if not narrowly tailored to a compelling interest.",
+  "facts": [
+    "North Carolina created a congressional district with an unusual shape.",
+    "The district was drawn with race as a major factor.",
+    "Voters challenged the map under the Equal Protection Clause."
+  ],
+  "reasoning": [
+    "Classifications based on race are inherently suspect.",
+    "Using race as the predominant factor triggers strict scrutiny.",
+    "Even well-intentioned redistricting must meet constitutional limits."
+  ],
+  "precedent": [
+    "Limited race-based districting without strong justification.",
+    "Established a framework for racial gerrymandering challenges."
+  ],
+  "whyExam": [
+    "Required case on redistricting and equal protection.",
+    "Often paired with Baker v. Carr and other voting cases."
+  ],
+  "whyReal": [
+    "Shapes how states draw districts after the census.",
+    "Affects representation and voting rights litigation."
   ]
 }
 ]
