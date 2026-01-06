@@ -184,10 +184,14 @@ function openYearExpand(year, itemsInYear) {
   setText("expandTitle", `${year}`);
   setText("expandMeta", summarizeYear(itemsInYear));
 
-    const summary =
-    itemsInYear.length === 0
+  const ctx = itemsInYear.find((x) => x && x.yearContext)?.yearContext;
+
+  const summary = ctx
+    ? ctx
+    : itemsInYear.length === 0
       ? "Select an event. APUSH info coming soon."
       : "Select an event below. APUSH info coming soon.";
+
   setText("expandSummary", summary);
 
   const list = $("expandItems");
@@ -265,7 +269,11 @@ function renderYears(allItems) {
     const subEl = document.createElement("div");
     subEl.className = "year-sub";
 
-    if (itemsInYear.length === 0) {
+    const ctx = itemsInYear.find((x) => x && x.yearContext)?.yearContext;
+
+    if (ctx) {
+      subEl.textContent = ctx;
+    } else if (itemsInYear.length === 0) {
       subEl.textContent = "No items yet.";
     } else {
       const casesInYear = itemsInYear.filter((x) => x.category === "case");
@@ -280,7 +288,7 @@ function renderYears(allItems) {
             ? `Cases: ${shown.join(" • ")} • +${remaining} more`
             : `Cases: ${shown.join(" • ")}`;
       } else {
-        subEl.textContent = "Open the year snapshot, then pick a card to study.";
+        subEl.textContent = "Select the year to view events.";
       }
     }
 

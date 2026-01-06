@@ -645,6 +645,82 @@
   ]
 },
 {
+  "id": "civil-rights-act-1964",
+  "subject": "apgov",
+  "category": "event",
+  "thumbnail": { "src": "", "alt": "Civil Rights Act of 1964 thumbnail" },
+  "title": "Civil Rights Act of 1964",
+  "year": 1964,
+  "type": "Landmark law",
+  "required": true,
+  "tags": ["Civil Rights", "Equal Protection", "Federal Power"],
+  "yearContext": "At the height of the modern civil rights movement, Congress passed sweeping legislation banning segregation in public accommodations and prohibiting major forms of discrimination in employment and federally funded programs. The law strengthened national power to enforce equal access and equal opportunity and reshaped how rights protections are implemented nationwide.",
+  "quickTake": "Banned segregation and major forms of discrimination, expanding federal enforcement tools.",
+  "corePrompt": "How did the Civil Rights Act of 1964 expand civil rights protections and federal enforcement power?",
+  "answerLabel": "Significance",
+  "answerText": "The Civil Rights Act of 1964 prohibited segregation in public accommodations and discrimination in employment, enabling stronger federal enforcement and accelerating the shift toward equal protection in practice.",
+  "facts": [
+    "Banned segregation in many public accommodations (Title II).",
+    "Prohibited employment discrimination based on race, color, religion, sex, or national origin (Title VII).",
+    "Expanded federal authority to enforce civil rights, including through the DOJ and the EEOC."
+  ],
+  "reasoning": [
+    "Civil rights protections often require federal enforcement mechanisms to be meaningful.",
+    "National standards can reduce unequal treatment across states and localities.",
+    "The law connects to constitutional principles of equal protection and federal power." 
+  ],
+  "precedent": [
+    "Provided a legal foundation for later civil rights litigation and enforcement.",
+    "Strengthened the federal role in protecting individual rights."
+  ],
+  "whyExam": [
+    "Core context for Unit 3 civil rights and liberties.",
+    "Connects federal power, civil rights policy, and enforcement mechanisms."
+  ],
+  "whyReal": [
+    "Shapes modern workplace discrimination rules and remedies.",
+    "Underpins ongoing debates about civil rights enforcement and equality."
+  ]
+},
+{
+  "id": "voting-rights-act-1965",
+  "subject": "apgov",
+  "category": "event",
+  "thumbnail": { "src": "", "alt": "Voting Rights Act of 1965 thumbnail" },
+  "title": "Voting Rights Act of 1965",
+  "year": 1965,
+  "type": "Landmark law",
+  "required": true,
+  "tags": ["Voting Rights", "Civil Rights", "Federalism"],
+  "yearContext": "After years of barriers that limited minority political participation, Congress enacted the Voting Rights Act to protect access to the ballot and strengthen federal oversight of elections where discrimination persisted. The law became a turning point for political equality, altering the balance between state control of elections and national enforcement of constitutional rights.",
+  "quickTake": "Protected voting access and expanded federal oversight to prevent discriminatory election practices.",
+  "corePrompt": "How did the Voting Rights Act of 1965 reshape elections and the balance of state and national power?",
+  "answerLabel": "Significance",
+  "answerText": "The Voting Rights Act of 1965 targeted discriminatory voting practices and strengthened federal enforcement, expanding participation and redefining the relationship between states and the national government in election administration.",
+  "facts": [
+    "Targeted practices that had been used to suppress minority voting, including literacy tests.",
+    "Allowed federal oversight and enforcement in jurisdictions with a history of discrimination.",
+    "Increased voter registration and participation where barriers had been highest."
+  ],
+  "reasoning": [
+    "Voting is fundamental to representative democracy and political equality.",
+    "Rights protections require enforceable remedies, not just formal guarantees.",
+    "Federal enforcement can address persistent discrimination when state action fails." 
+  ],
+  "precedent": [
+    "Became a major foundation for voting rights litigation and election administration rules.",
+    "Central to modern debates about federal oversight, redistricting, and election access."
+  ],
+  "whyExam": [
+    "Essential context for Unit 3 civil rights and Unit 1 federalism themes.",
+    "Links elections, representation, and the federal role in protecting constitutional rights."
+  ],
+  "whyReal": [
+    "Shapes modern election law disputes and policy decisions.",
+    "Continues to influence how access to voting is protected and contested."
+  ]
+},
+{
   "id": "roe-1973",
   "subject": "apgov",
   "category": "case",
