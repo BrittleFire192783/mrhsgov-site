@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/dealin9/public_html/mrhsgov/
-    - /bin/mkdir -p "$DEPLOYPATH"
-    - /usr/bin/rsync -av --delete --exclude=".git/" --exclude=".cpanel.yml" ./ "$DEPLOYPATH"
-    - /bin/date > "$DEPLOYPATH/.deploy_confirmed"
+    - echo "DEPLOY START" > /home/dealin9/public_html/mrhsgov/_deploy_test.txt
+    - /bin/pwd >> /home/dealin9/public_html/mrhsgov/_deploy_test.txt
+    - /bin/ls -la >> /home/dealin9/public_html/mrhsgov/_deploy_test.txt
+    - /usr/bin/rsync -av ./ /home/dealin9/public_html/mrhsgov/
